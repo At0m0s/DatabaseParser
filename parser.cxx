@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
         cout << "Usage: " << argv[0] << " <delimeter> <input file> <output file>" << endl;
         return 1;
     }
-    cout << "Welcome to the combo parser, created by At0m0s." << endl;
+    cout << "Welcome to the database parser, created by At0m0s." << endl;
     vector <string> fields;
     string line;
     string delimeter = argv[1];
@@ -33,10 +33,8 @@ int main(int argc, char* argv[]) {
         {
             size_t n = std::count(line.begin(), line.end(), ':');
             if (line.find(delimeter) != std::string::npos) {
-                if (line.find(";") != std::string::npos || line.find("#") != std::string::npos || line.find("&#") != std::string::npos) {
+                if (line.find(";") != std::string::npos || line.find("#") != std::string::npos || line.find("&#") != std::string::npos || n != 3) {
                     //break;
-                } else if (n != 3) {
-                    // lawl
                 }
                 else {
                     //cout << line << endl;
